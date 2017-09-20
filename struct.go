@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-type logACEF struct {
+type LogACEF struct {
 	fs                    string
 	efs                   string
 	eao                   string

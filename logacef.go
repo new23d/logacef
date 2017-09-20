@@ -8,10 +8,10 @@ import (
 	"time"
 )
 
-func NewLogACEF(device_vendor string, device_product string, device_version string, filepath string, min_severity int) *logACEF {
+func NewLogACEF(device_vendor string, device_product string, device_version string, filepath string, min_severity int) *LogACEF {
 	var er error
 
-	ev := new(logACEF)
+	ev := new(LogACEF)
 	ev.cef_version = "0"
 	ev.fs = "|"
 	ev.efs = " "
@@ -39,7 +39,7 @@ func NewLogACEF(device_vendor string, device_product string, device_version stri
 	return ev
 }
 
-func (ev logACEF) WriteEvent(deci string, desc string, sevr int, extn CEFExtn) {
+func (ev LogACEF) WriteEvent(deci string, desc string, sevr int, extn CEFExtn) {
 	if sevr >= ev._min_severity {
 		ev.timestamp = time.Now().UTC()
 
